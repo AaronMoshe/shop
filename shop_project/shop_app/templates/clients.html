@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html>
+<head>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+	<title>List Clients</title>
+</head>
+<body>
+	<nav class="navbar navbar-light bg-secondary">
+		<a class="navbar-brand text-light" href="/">
+			<i class="fab fa-spotify"></i>Sababa
+		</a>
+       <form class="form-inline">
+       	<input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+       	<button class="btn btn-outline-light my-2 my-sm-0 text-light" type="submit">Search</button>
+       </form>
+   </nav>
+	<div class="container">
+   		<div class="row">
+     		<div class="col-6 offset-md-3">
+     			<h1>Liste des Clients</h1>
+     			{% for client in clients %}
+     			<h3>
+     				<a href="{% url 'shop_app:client' client.id %}">{{ client.first_name }} {{ client.last_name }}</a>
+     			</h3>		
+     			{% endfor %}
+			</div>
+		</div>
+	</div>
+
+</body>
+</html>

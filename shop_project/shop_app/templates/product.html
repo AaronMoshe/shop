@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html>
+<head>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+	<title>{{ product.name }}</title>
+</head>
+<body>
+
+	<nav class="navbar navbar-light bg-secondary">
+		<a class="navbar-brand text-light" href="/">
+			<i class="fab fa-spotify"></i>Sababa
+		</a>
+       <form class="form-inline">
+       	<input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+       	<button class="btn btn-outline-light my-2 my-sm-0 text-light" type="submit">Search</button>
+       </form>
+   </nav>
+	<img src="http://{{ request.get_host }}/{{ product.image }}" class="rounded float-left" alt="...">
+	<dl class="row">
+  		<dt class="col-sm-3">Product Details</dt>
+  		<dd class="col-sm-9">
+    		<p>Name : {{ product.name }}</p>
+    		<p>Price : ${{ product.price }}</p>
+    		<p>Description : {{ product.description }}</p>
+  		</dd>
+  	</dl>
+
+</body>
+</html>
