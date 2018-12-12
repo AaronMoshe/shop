@@ -19,6 +19,8 @@
      		<div class="col-6 offset-md-3">
 				<h1>Product List</h1>
 				<a href="{% url 'shop_app:clients' %}">Liste des Clients</a>
+				<br>
+				<a href="{% url 'shop_app:maillots' %}">Liste des Maillots</a>
 				{% for product in products %}
 				<ul class="list-group">
   					<li class="list-group-item disabled">{{ product.name }}</li>
@@ -28,8 +30,7 @@
   						<a href="{% url 'shop_app:product' product.id %}">Details</a>
   					</li>
 				</ul>
-				
-				<hr>
+				<br>
 				{% endfor %}
 			</div>
 		</div>
